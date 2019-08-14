@@ -5,3 +5,4 @@ export * from './NotificationSample';
 export * from './CrashSample';
 export * from './PickerSample';
 export * from './AnalyticsSample';
+export * from './LottieSample';
