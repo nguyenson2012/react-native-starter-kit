@@ -1,4 +1,13 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  mobile-Bridging-Header.h
+//  mobile
+//
+//  Created by nguyenson on 8/14/19.
+//  Copyright © 2019 Facebook. All rights reserved.
 //
 
+#ifndef mobile_Bridging_Header_h
+#define mobile_Bridging_Header_h
+
+
+#endif /* mobile_Bridging_Header_h */

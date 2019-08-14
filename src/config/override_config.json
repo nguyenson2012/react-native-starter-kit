@@ -3,19 +3,19 @@
     "appName": "React Native Starter Kit",
     "applicationId": "pro.thinhtran.treactnativestarterkit",
     "codePush": {
-      "productionKey": "DbiCIf__lCwOgkKf71pMB36dQpMogtzGWABRT",
-      "stagingKey": "_GK6PmFglcwxOTM1X18XW3kOtzn5E3WXAgHlS"
+      "productionKey": "",
+      "stagingKey": ""
     }
   },
   "fb": {
-    "id": "341544560115835"
+    "id": ""
   },
   "ios": {
     "appName": "React Native Starter Kit",
     "bundleId": "pro.thinhtran.treactnativestarterkit",
     "codePush": {
-      "productionKey": "gS791p_Xm_B2hwNxTm44jBQzrSHt4GLxvTmOA",
-      "stagingKey": "k45hdtFSmnL9-I2XkiHJTdXnCvc_PjQrZctjm"
+      "productionKey": "",
+      "stagingKey": ""
     }
   }
 }

@@ -16,7 +16,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* mobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* mobileTests.m */; };
-		322706F72303F82300845E3E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322706F62303F82300845E3E /* File.swift */; };
+		329D239C230421BF00859FF0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329D239B230421BF00859FF0 /* File.swift */; };
 		380BEE93B2A04E188002A3F0 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECD1240D213B4CA2AAAF7EC2 /* MaterialCommunityIcons.ttf */; };
 		3C82054ED43B631E2FC11C62 /* libPods-mobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC8C4D952BFBF24D0FECD15 /* libPods-mobile-tvOSTests.a */; };
 		4A6E817C22EAC95100E2CE74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A6E817B22EAC95100E2CE74 /* GoogleService-Info.plist */; };
@@ -60,8 +60,8 @@
 		20974AC0D9EF49D51D354066 /* Pods-mobile-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile-tvOS.release.xcconfig"; path = "Target Support Files/Pods-mobile-tvOS/Pods-mobile-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* mobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* mobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		322706F52303F82200845E3E /* mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mobile-Bridging-Header.h"; sourceTree = "<group>"; };
-		322706F62303F82300845E3E /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		329D239A23041F6D00859FF0 /* mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "mobile-Bridging-Header.h"; path = "mobile/mobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		329D239B230421BF00859FF0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = File.swift; path = mobile/File.swift; sourceTree = "<group>"; };
 		47A84DD82E05749803A72ADC /* libPods-mobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6E817B22EAC95100E2CE74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "mobile/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BEB0C415CF58742CD535118 /* Pods-mobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobileTests.debug.xcconfig"; path = "Target Support Files/Pods-mobileTests/Pods-mobileTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +155,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				329D239A23041F6D00859FF0 /* mobile-Bridging-Header.h */,
+				329D239B230421BF00859FF0 /* File.swift */,
 			);
 			name = mobile;
 			sourceTree = "<group>";
@@ -190,7 +192,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				322706F62303F82300845E3E /* File.swift */,
 				13B07FAE1A68108700A75B9A /* mobile */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* mobileTests */,
@@ -198,7 +199,6 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				0DA7BFA05DA9BABD134E2AB0 /* Pods */,
 				7A34E88E0E0D4F9FAD332E83 /* Resources */,
-				322706F52303F82200845E3E /* mobile-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -612,7 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				322706F72303F82300845E3E /* File.swift in Sources */,
+				329D239C230421BF00859FF0 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

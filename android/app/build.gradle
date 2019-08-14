@@ -208,7 +208,6 @@ configurations.all {
 }
 
 dependencies {
-    implementation project(':lottie-react-native')
     implementation project(':react-native-code-push')
     implementation project(':react-native-orientation')
     implementation project(':react-native-picker')

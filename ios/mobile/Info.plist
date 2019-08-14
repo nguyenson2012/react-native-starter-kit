@@ -29,7 +29,7 @@
         <string>fburl</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb341544560115835</string>
+				<string>fb</string>
 			</array>
       </dict>
       <dict>
@@ -39,14 +39,14 @@
         <string>googleurl</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.427332936076-mk0jer7ivc9gpeg9u4m7eleavos5ds5n</string>
+				<string></string>
 			</array>
       </dict>
     </array>
     <key>CFBundleVersion</key>
 	<string>3145742</string>
     <key>FacebookAppID</key>
-	<string>341544560115835</string>
+	<string></string>
     <key>FacebookDisplayName</key>
 	<string>React Native Starter Kit</string>
     <key>ITSAppUsesNonExemptEncryption</key>
