@@ -14,5 +14,6 @@ export interface CountryCode {
 
 export const jsonSources = {
   countries: () => require('./json/country_code.json') as CountryCode[],
+  loading: () => require('./json/loading.json'),
 };
 /* eslint-enable global-require */

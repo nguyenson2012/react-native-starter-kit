@@ -30,3 +30,4 @@ export * from './Tooltip';
 export * from './View';
 export * from './WithStore';
 export * from './WithScreen';
+export * from './Animation';

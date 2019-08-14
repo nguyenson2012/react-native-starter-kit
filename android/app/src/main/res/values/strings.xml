@@ -1,5 +1,5 @@
 <resources>
 	<string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">deployment-key-here</string>
     <string name="app_name">React Native Starter Kit</string>
-    <string name="facebook_app_id"></string>
+    <string name="facebook_app_id">341544560115835</string>
 </resources>
