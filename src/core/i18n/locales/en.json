@@ -52,7 +52,7 @@
     "required": "{{field}} is required",
     "somethingWentWrong": "Something went wrong",
     "unexpectedErrorOccurred": "Unexpected error occurred",
-    "unexpectedErrorOccurredMessage": "We have reported this to our team.! Please close the app and start again!"
+    "unexpectedErrorOccurredMessage": "We have reported this to our team! Please close the app and start again!"
   },
   "forgotPasswordScreen": {
     "email": "Email",

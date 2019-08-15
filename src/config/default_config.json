@@ -28,5 +28,6 @@
     },
     "version": "1.2.0"
   },
+  "sentryDns": "",
   "signInOptions": ["email", "phone", "facebook", "google"]
 }

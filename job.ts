@@ -2,8 +2,8 @@
 // tslint:disable:no-console
 import fs from 'fs';
 import path from 'path';
-import { config } from './src/config';
 import _ from 'lodash/fp';
+import { config } from './src/config';
 
 interface CopyFileTask {
   src: string;
@@ -18,33 +18,67 @@ interface ReplaceStringTask {
   }[];
 }
 
-const log = (...args: any[]) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const log = (...args: any[]): void => {
+  // eslint-disable-next-line no-console
   console.log(...args);
 };
 
-export const updateConfig = (environment: string = 'default') => {
+export const updateConfig = (environment: string = 'default'): void => {
   const envFolder = `environments/${environment}`;
   const copyTasks: CopyFileTask[] = [
-    { src: `${envFolder}/android/app.keystore`, des: `android/app/app.keystore` },
-    { src: `${envFolder}/android/google-services.json`, des: `android/app/google-services.json` },
-    { src: `${envFolder}/android/gradle.properties`, des: `android/gradle.properties` },
-    { src: `${envFolder}/fastlane/googlePlaySecretKey.json`, des: `fastlane/googlePlaySecretKey.json` },
-    { src: `${envFolder}/ios/GoogleService-Info.plist`, des: `ios/mobile/GoogleService-Info.plist` },
-    { src: `${envFolder}/override_config.json`, des: `src/config/override_config.json` },
+    {
+      src: path.resolve(__dirname, `${envFolder}/android/app.keystore`),
+      des: path.resolve(__dirname, `android/app/app.keystore`),
+    },
+    {
+      src: path.resolve(__dirname, `${envFolder}/android/google-services.json`),
+      des: path.resolve(__dirname, `android/app/google-services.json`),
+    },
+    {
+      src: path.resolve(__dirname, `${envFolder}/android/gradle.properties`),
+      des: path.resolve(__dirname, `android/gradle.properties`),
+    },
+    {
+      src: path.resolve(__dirname, `${envFolder}/android/sentry.properties`),
+      des: path.resolve(__dirname, `android/sentry.properties`),
+    },
+    {
+      src: path.resolve(__dirname, `${envFolder}/fastlane/googlePlaySecretKey.json`),
+      des: path.resolve(__dirname, `fastlane/googlePlaySecretKey.json`),
+    },
+    {
+      src: path.resolve(__dirname, `${envFolder}/ios/GoogleService-Info.plist`),
+      des: path.resolve(__dirname, `ios/mobile/GoogleService-Info.plist`),
+    },
+    {
+      src: path.resolve(__dirname, `${envFolder}/ios/sentry.properties`),
+      des: path.resolve(__dirname, `ios/mobile/sentry.properties`),
+    },
+    {
+      src: path.resolve(__dirname, `${envFolder}/override_config.json`),
+      des: path.resolve(__dirname, `src/config/override_config.json`),
+    },
   ];
-  for (const copyTask of copyTasks) {
+  copyTasks.forEach((copyTask) => {
     if (!fs.existsSync(copyTask.src)) {
-      continue;
+      return;
     }
     fs.copyFileSync(copyTask.src, copyTask.des);
-    log(`copied ${copyTask.src} to ${copyTask.des}`);
-  }
+    log(`copied ${copyTask.src} \n to ${copyTask.des}`);
+  });
 
   // get google
-  const googleServiceInfoContent = fs.readFileSync(`${envFolder}/ios/GoogleService-Info.plist`, { encoding: 'utf8' });
+  const googleServiceInfoContent = fs.readFileSync(`${envFolder}/ios/GoogleService-Info.plist`, {
+    encoding: 'utf8',
+  });
   const googleReverseClientId = googleServiceInfoContent.match(/com.googleusercontent.apps.[\w,-]*/);
 
-  const overrideConfig = JSON.parse(fs.readFileSync(`${envFolder}/override_config.json`, { encoding: 'utf8' }));
+  const overrideConfig = JSON.parse(
+    fs.readFileSync(`${envFolder}/override_config.json`, {
+      encoding: 'utf8',
+    }),
+  );
   const newConfig = _.merge(config, overrideConfig);
   const replaceTasks: ReplaceStringTask[] = [
     {
@@ -114,23 +148,26 @@ export const updateConfig = (environment: string = 'default') => {
       ],
     },
   ];
-  for (const replaceTask of replaceTasks) {
+
+  replaceTasks.forEach((replaceTask) => {
     if (!fs.existsSync(replaceTask.src)) {
-      continue;
+      return;
     }
-    const oldContent = fs.readFileSync(replaceTask.src, { encoding: 'utf8' });
+    const oldContent = fs.readFileSync(replaceTask.src, {
+      encoding: 'utf8',
+    });
 
     let newContent = oldContent;
-    for (const replace of replaceTask.replaces) {
+    replaceTask.replaces.forEach((replace) => {
       newContent = newContent.replace(replace.old, replace.new);
-    }
+    });
 
     fs.writeFileSync(replaceTask.src, newContent);
     log(`updated ${replaceTask.src}`);
-  }
+  });
 };
 
-export const updateVersion = () => {
+export const updateVersion = (): void => {
   const replaceTasks: ReplaceStringTask[] = [
     {
       src: path.resolve(__dirname, `./android/app/build.gradle`),
@@ -159,23 +196,26 @@ export const updateVersion = () => {
       ],
     },
   ];
-  for (const replaceTask of replaceTasks) {
+
+  replaceTasks.forEach((replaceTask) => {
     if (!fs.existsSync(replaceTask.src)) {
-      continue;
+      return;
     }
-    const oldContent = fs.readFileSync(replaceTask.src, { encoding: 'utf8' });
+    const oldContent = fs.readFileSync(replaceTask.src, {
+      encoding: 'utf8',
+    });
 
     let newContent = oldContent;
-    for (const replace of replaceTask.replaces) {
+    replaceTask.replaces.forEach((replace) => {
       newContent = newContent.replace(replace.old, replace.new);
-    }
+    });
 
     fs.writeFileSync(replaceTask.src, newContent);
     log(`updated ${replaceTask.src}`);
-  }
+  });
 };
 
-const run = () => {
+const run = (): void => {
   const command = process.argv[2];
   switch (command) {
     case 'update-version':

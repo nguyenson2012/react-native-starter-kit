@@ -47,6 +47,8 @@ target 'mobile' do
 
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
 
+  pod 'SentryReactNative', :path => '../node_modules/react-native-sentry'
+
   target 'mobileTests' do
     inherit! :search_paths
     # Pods for testing

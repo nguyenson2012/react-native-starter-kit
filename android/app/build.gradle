@@ -88,6 +88,7 @@ project.ext.react = [
 // apply from: "../../node_modules/react-native/react.gradle"
 apply from: "./react.gradle"
 apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
+apply from: "../../node_modules/react-native-sentry/sentry.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -208,6 +209,7 @@ configurations.all {
 }
 
 dependencies {
+    implementation project(':react-native-sentry')
     implementation project(':react-native-code-push')
     implementation project(':react-native-orientation')
     implementation project(':react-native-picker')

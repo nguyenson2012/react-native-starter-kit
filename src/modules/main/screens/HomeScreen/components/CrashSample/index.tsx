@@ -1,13 +1,15 @@
 import React from 'react';
 import { Card, CardItem, Text, View, Button } from '@app/components';
+import { sleep } from '@app/core';
 import { styles } from './styles';
 
 export const CrashSample = (): JSX.Element => {
   const crashTest = (): void => {
-    throw new Error('crashTestAsync');
+    throw new Error('crashTest');
   };
 
   const crashTestAsync = async (): Promise<void> => {
+    await sleep(500);
     throw new Error('crashTestAsync');
   };
 

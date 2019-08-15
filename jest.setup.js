@@ -16,5 +16,4 @@ jest.mock('react-native-splash-screen', () => ({
 jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
 jest.mock('@react-native-firebase/app', () => ({}));
 jest.mock('@react-native-firebase/auth', () => ({}));
-jest.mock('@react-native-firebase/crashlytics', () => ({}));
 jest.mock('@react-native-firebase/config', () => ({}));
