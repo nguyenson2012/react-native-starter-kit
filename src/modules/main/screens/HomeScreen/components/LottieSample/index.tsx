@@ -8,7 +8,7 @@ export const LottieSample = (): JSX.Element => {
   return (
     <Card>
       <CardItem header bordered>
-        <Text primary>Lottie Animation</Text>
+        <Text primary>Lottie Animations</Text>
       </CardItem>
       <CardItem bordered>
         <View column style={styles.container}>
